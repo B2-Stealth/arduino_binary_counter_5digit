@@ -1,0 +1,33 @@
+# arduino_binary_counter_5digit
+This is my code for a simple infinite binary counter that shows the last 5 digits of the number
+//code to display last 5 digits of binary numbers
+void setup()
+{//the pins and corresponding bulbs -
+//9 - 5th digit
+//10 - 4th digit
+//11 - 3rd digit
+//12 - 2nd digit
+//13 - 1st digit
+  pinMode(9, OUTPUT);
+  pinMode(10, INPUT);
+  pinMode(11, INPUT);
+  pinMode(12, INPUT);
+  pinMode(13, INPUT);
+}
+
+void loop()
+{for(int i = 0;;i++){int j = i;
+  if(j & 1 == 1) digitalWrite(9, HIGH)  else digitalWrite(9,LOW);
+    j >>= 1;
+  if(j & 1 == 1) digitalWrite(10,HIGH); else digitalWrite(10,LOW);
+    j >>= 1;
+  if(j & 1 == 1) digitalWrite(11,HIGH); else digitalWrite(11,LOW);
+    j >>= 1;
+  if(j & 1 == 1) digitalWrite(12,HIGH); else digitalWrite(12,LOW);
+    j >>= 1;
+  if(j & 1 == 1) digitalWrite(13,HIGH); else digitalWrite(13,LOW);
+    delay(500);
+}
+}
+//use bit-wise operator to find each digit
+
